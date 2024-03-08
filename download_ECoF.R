@@ -1,10 +1,6 @@
 library(cli)
-library(readr)
-library(dplyr)
-library(stringr)
-library(tidyr)
+library(tidyverse)
 library(rvest)
-
 
 #' Retrieve the current online version of the Eschmeyer's Catalog of Fishes
 #'
@@ -13,12 +9,12 @@ library(rvest)
 #' @noRd
 get_current_ECoF_version <- function() {
   url <- "https://researcharchive.calacademy.org/research/ichthyology/catalog/SpeciesByFamily.asp"
-  text <- url |>
-    rvest::read_html() |>
-    rvest::html_elements("table") |>
+  text <- url %>%
+    rvest::read_html() %>%
+    rvest::html_elements("table") %>%
     rvest::html_text()
-  date <- text[2] |>
-    stringr::str_extract("[0-90-9]+ [A-Za-z]+ [0-90-9]+") |>
+  date <- text[2] %>%
+    stringr::str_extract("[0-90-9]+ [A-Za-z]+ [0-90-9]+") %>%
     strsplit(" ")
   #day <- date[[1]][1]
   month <- match(date[[1]][2], month.name)
@@ -65,25 +61,25 @@ download_ECoF <- function(seed = NULL, n = NULL) {
                      # Currently based on a personal development version of rFishTaxa
                      source("https://raw.githubusercontent.com/mattiaghilardi/rFishTaxa/fix-search_catalog/R/search_catalog.R")
                      search_cas(all_fam[x], type = "species_family")
-                   }) |>
+                   }) %>%
     dplyr::bind_rows()
 
   rm("get_cas", "search_cas", "species_family", envir = sys.frame()) # remove sourced functions
 
   # Build taxonomy table
-  taxonomy <- all_sp |>
-    dplyr::bind_rows() |>
-    dplyr::filter(!is.na(species)) |>
-    dplyr::mutate(genus = gsub(" .*", "", species)) |>
+  taxonomy <- all_sp %>%
+    dplyr::bind_rows() %>%
+    dplyr::filter(!is.na(species)) %>%
+    dplyr::mutate(genus = gsub(" .*", "", species)) %>%
     tidyr::separate(family,
                     into = c("family", "subfamily"),
                     sep = "_",
                     remove = FALSE,
                     fill = "right") |>
-    dplyr::select("species", "genus", "subfamily", "family") |>
-    dplyr::distinct() |>
-    dplyr::arrange(species) |>
-    dplyr::left_join(high_ranks |>
+    dplyr::select("species", "genus", "subfamily", "family") %>%
+    dplyr::distinct() %>%
+    dplyr::arrange(species) %>%
+    dplyr::left_join(high_ranks %>%
                        dplyr::select("subfamily", "family", "order", "class"))
 
   # return a list
@@ -95,17 +91,18 @@ download_ECoF <- function(seed = NULL, n = NULL) {
 version <- get_current_ECoF_version()
 
 # existing versions
-available_releases <- dir("archive") |>
-  stringr::str_extract_all('(?<=ECoF_).+?(?=.rds)') |>
+available_releases <- dir("archive") %>%
+  stringr::str_extract_all('(?<=ECoF_).+?(?=.rds)') %>%
   unlist()
 
 if (! version %in% available_releases) {
   # download latest taxonomy
-  cli::cli_inform("Downloading latest version: { version }")
+  cli::cli_inform("Downloading latest version: {version}")
   db <- download_ECoF()
   # save rds in /archve
   readr::write_rds(db,
-                   here::here("archive", paste0("ECoF_", version, ".rds")),
+                   here::here("archive",
+                              stringr::str_c("ECoF_", version, ".rds")),
                    compress = "gz")
   # # save internal
   # all_db <- dir("archive")
@@ -117,5 +114,5 @@ if (! version %in% available_releases) {
   # cli::cli_inform("Saving internal data: ECoF_db")
   # usethis::use_data(ECoF_db, internal = TRUE, overwrite = TRUE)
 } else {
-  cli::cli_inform("Latest version already available")
+  cli::cli_inform("Latest version ({version}) already available")
 }
