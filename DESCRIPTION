@@ -10,6 +10,8 @@ Authors@R:
 Description: An archive of the Eschmeyer's Catalog of Fishes automatically
     updated with new database releases
 License: MIT + file LICENSE
+URL: https://github.com/mattiaghilardi/ECoFarchive
+BugReports: https://github.com/mattiaghilardi/ECoFarchive/issues
 Depends: 
     R (>= 3.5.0)
 Imports: 
