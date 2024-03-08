@@ -99,7 +99,7 @@ if (! version %in% available_releases) {
   # download latest taxonomy
   cli::cli_inform("Downloading latest version: {version}")
   db <- download_ECoF()
-  # save rds in /archve
+  # save rds in /archive
   readr::write_rds(db,
                    here::here("archive",
                               stringr::str_c("ECoF_", version, ".rds")),
