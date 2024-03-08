@@ -1,0 +1,25 @@
+Package: ECoFarchive
+Title: Archive of the Eschmeyer's Catalog of Fishes
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Mattia",
+           family = "Ghilardi",
+           role = c("aut", "cre"),
+           email = "mattia.ghilardi91@gmail.com",
+           comment = c(ORCID = "0000-0001-9592-7252"))
+Description: An archive of the Eschmeyer's Catalog of Fishes automatically
+    updated with new database releases
+License: MIT + file LICENSE
+Depends: 
+    R (>= 3.5.0)
+Imports: 
+    cli,
+    dplyr,
+    readr,
+    rvest,
+    stringr,
+    tidyr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
