@@ -18,6 +18,7 @@ library(badger)
 available_releases <- dir("archive") %>%
   str_extract_all('(?<=ECoF_).+?(?=.rds)') %>%
   unlist()
+oldest_release <- sort(available_releases)[length(available_releases)]
 latest_release <- sort(available_releases)[1]
 url <- str_c("https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_", 
              latest_release, 
@@ -30,4 +31,10 @@ url <- str_c("https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/EC
 `r badge_custom("latest release", latest_release, "blue", url = url)`
 <!-- badges: end -->
 
-This repository serves as the [Eschmeyer's Catalog of Fishes](https://research.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) archive accessed through the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package (currently in development).
+This repository serves as the archive of the [Eschmeyer's Catalog of Fishes](https://research.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (ECoF) (Fricke et al. 2024, Van der Laan et al. 2024), accessed through the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package (currently in development). The oldest available ECoF release is *`r oldest_release`*. The archive is automatically updated every month between the 5^th^ and the 10^th^ with the new release.
+
+### References
+
+Fricke, R., Eschmeyer, W. N. & Van der Laan, R. (eds) 2024.  ESCHMEYER'S CATALOG OF FISHES: GENERA, SPECIES, REFERENCES. (<http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>). Electronic version accessed dd mmm 2024.
+
+Van der Laan, R., Fricke, R. & Eschmeyer, W. N. (eds) 2024.  ESCHMEYER'S CATALOG OF FISHES: CLASSIFICATION. (<http://www.calacademy.org/scientists/catalog-of-fishes-classification/>). Electronic version accessed dd mmm 2024. 

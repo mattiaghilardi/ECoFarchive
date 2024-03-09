@@ -12,8 +12,22 @@ MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://cran.r-pro
 [![](https://img.shields.io/badge/latest%20release-2024.03-blue.svg)](https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_2024.03.rds)
 <!-- badges: end -->
 
-This repository serves as the [Eschmeyer’s Catalog of
+This repository serves as the archive of the [Eschmeyer’s Catalog of
 Fishes](https://research.calacademy.org/research/ichthyology/catalog/fishcatmain.asp)
-archive accessed through the
-[`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package
-(currently in development).
+(ECoF) (Fricke et al. 2024, Van der Laan et al. 2024), accessed through
+the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package
+(currently in development). The oldest available ECoF release is
+*2024.03*. The archive is automatically updated every month between the
+5<sup>th</sup> and the 10<sup>th</sup> with the new release.
+
+### References
+
+Fricke, R., Eschmeyer, W. N. & Van der Laan, R. (eds) 2024. ESCHMEYER’S
+CATALOG OF FISHES: GENERA, SPECIES, REFERENCES.
+(<http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>).
+Electronic version accessed dd mmm 2024.
+
+Van der Laan, R., Fricke, R. & Eschmeyer, W. N. (eds) 2024. ESCHMEYER’S
+CATALOG OF FISHES: CLASSIFICATION.
+(<http://www.calacademy.org/scientists/catalog-of-fishes-classification/>).
+Electronic version accessed dd mmm 2024.
