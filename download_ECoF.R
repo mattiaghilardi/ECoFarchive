@@ -1,5 +1,8 @@
 library(cli)
-library(tidyverse)
+library(dplyr)
+library(readr)
+library(stringr)
+library(tidyr)
 library(rvest)
 
 #' Retrieve the current online version of the Eschmeyer's Catalog of Fishes
