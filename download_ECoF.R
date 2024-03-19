@@ -1,4 +1,5 @@
 library(cli)
+library(here)
 library(dplyr)
 library(readr)
 library(stringr)
@@ -31,8 +32,10 @@ get_current_ECoF_version <- function() {
 #' @param seed A seed (only for testing)
 #' @param n Number of fish families (only for testing)
 #'
-#' @return A list of two elements:
-#' species_family output and search_cas output for all species
+#' @return
+#' A list of two elements:
+#'  - `all_species`: search_cas output for all species
+#'  - `taxonomy`: complete ECoF taxonomy
 #'
 #' @noRd
 download_ECoF <- function(seed = NULL, n = NULL) {
@@ -58,11 +61,11 @@ download_ECoF <- function(seed = NULL, n = NULL) {
   }
 
   # Get all valid species
+  # Currently based on a personal development version of rFishTaxa
+  source("https://raw.githubusercontent.com/mattiaghilardi/rFishTaxa/fix-search_catalog/R/search_catalog.R")
   all_sp <- lapply(cli::cli_progress_along(1:length(all_fam),
                                            "Extracting species"),
                    function(x) {
-                     # Currently based on a personal development version of rFishTaxa
-                     source("https://raw.githubusercontent.com/mattiaghilardi/rFishTaxa/fix-search_catalog/R/search_catalog.R")
                      search_cas(all_fam[x], type = "species_family")
                    }) %>%
     dplyr::bind_rows()
@@ -71,16 +74,14 @@ download_ECoF <- function(seed = NULL, n = NULL) {
 
   # Build taxonomy table
   taxonomy <- all_sp %>%
-    dplyr::bind_rows() %>%
-    dplyr::filter(!is.na(species)) %>%
+    dplyr::filter(status == "Validation") %>%
     dplyr::mutate(genus = gsub(" .*", "", species)) %>%
     tidyr::separate(family,
                     into = c("family", "subfamily"),
                     sep = "_",
                     remove = FALSE,
                     fill = "right") |>
-    dplyr::select("species", "genus", "subfamily", "family") %>%
-    dplyr::distinct() %>%
+    dplyr::select("spid", "species", "genus", "subfamily", "family") %>%
     dplyr::arrange(species) %>%
     dplyr::left_join(high_ranks %>%
                        dplyr::select("subfamily", "family", "order", "class"))
