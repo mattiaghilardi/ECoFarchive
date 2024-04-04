@@ -23,6 +23,7 @@ latest_release <- sort(available_releases)[1]
 url <- str_c("https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_", 
              latest_release, 
              ".rds")
+download_date <- format(as.Date(Sys.Date(), format = "%Y-%m-%d"), "%d %B %Y")
 ```
 
 <!-- badges: start -->
@@ -35,6 +36,6 @@ This repository serves as the archive of the [Eschmeyer's Catalog of Fishes](htt
 
 ### References
 
-Fricke, R., Eschmeyer, W. N. & Van der Laan, R. (eds) 2024.  ESCHMEYER'S CATALOG OF FISHES: GENERA, SPECIES, REFERENCES. (<http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>). Electronic version accessed dd mmm 2024.
+Fricke, R., Eschmeyer, W. N. & Van der Laan, R. (eds) 2024.  ESCHMEYER'S CATALOG OF FISHES: GENERA, SPECIES, REFERENCES. (<http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>). Electronic version accessed `r download_date`.
 
-Van der Laan, R., Fricke, R. & Eschmeyer, W. N. (eds) 2024.  ESCHMEYER'S CATALOG OF FISHES: CLASSIFICATION. (<http://www.calacademy.org/scientists/catalog-of-fishes-classification/>). Electronic version accessed dd mmm 2024. 
+Van der Laan, R., Fricke, R. & Eschmeyer, W. N. (eds) 2024.  ESCHMEYER'S CATALOG OF FISHES: CLASSIFICATION. (<http://www.calacademy.org/scientists/catalog-of-fishes-classification/>). Electronic version accessed `r download_date`. 
