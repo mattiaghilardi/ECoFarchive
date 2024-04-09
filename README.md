@@ -25,9 +25,9 @@ the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package
 Fricke, R., Eschmeyer, W. N. & Van der Laan, R. (eds) 2024. ESCHMEYER’S
 CATALOG OF FISHES: GENERA, SPECIES, REFERENCES.
 (<http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>).
-Electronic version accessed 04 April 2024.
+Electronic version accessed 09 April 2024.
 
 Van der Laan, R., Fricke, R. & Eschmeyer, W. N. (eds) 2024. ESCHMEYER’S
 CATALOG OF FISHES: CLASSIFICATION.
 (<http://www.calacademy.org/scientists/catalog-of-fishes-classification/>).
-Electronic version accessed 04 April 2024.
+Electronic version accessed 09 April 2024.
