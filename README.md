@@ -17,7 +17,7 @@ Fishes](https://research.calacademy.org/research/ichthyology/catalog/fishcatmain
 (ECoF) (Fricke et al. 2024, Van der Laan et al. 2024), accessed through
 the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package
 (currently in development). The oldest available ECoF release is
-*2024.03*. The archive is automatically updated every month between the
+*2024.04*. The archive is automatically updated every month between the
 1<sup>st</sup> and the 10<sup>th</sup> with the new release.
 
 ### References
