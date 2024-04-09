@@ -3,11 +3,13 @@ name: download-ECoF
 # Run at 00:00 UTC from the 5th to the 10th of each month
 on:
   schedule:
-    - cron:  '15 7 5-10 * *'
+    - cron:  '45 7 5-10 * *'
 
 jobs:
   download-ECoF:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
