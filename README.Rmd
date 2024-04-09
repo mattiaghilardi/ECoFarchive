@@ -18,8 +18,8 @@ library(badger)
 available_releases <- dir("archive") %>%
   str_extract_all('(?<=ECoF_).+?(?=.rds)') %>%
   unlist()
-oldest_release <- sort(available_releases)[length(available_releases)]
-latest_release <- sort(available_releases)[1]
+latest_release <- sort(available_releases)[length(available_releases)]
+oldest_release <- sort(available_releases)[1]
 url <- str_c("https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_", 
              latest_release, 
              ".rds")

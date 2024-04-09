@@ -9,7 +9,7 @@
 status](https://github.com/mattiaghilardi/ECoFarchive/workflows/download-ECoF/badge.svg)](https://github.com/mattiaghilardi/ECoFarchive/actions)
 [![License:
 MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://cran.r-project.org/web/licenses/MIT)
-[![](https://img.shields.io/badge/latest%20release-2024.03-blue.svg)](https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_2024.03.rds)
+[![](https://img.shields.io/badge/latest%20release-2024.04-blue.svg)](https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_2024.04.rds)
 <!-- badges: end -->
 
 This repository serves as the archive of the [Eschmeyer’s Catalog of
@@ -17,7 +17,7 @@ Fishes](https://research.calacademy.org/research/ichthyology/catalog/fishcatmain
 (ECoF) (Fricke et al. 2024, Van der Laan et al. 2024), accessed through
 the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package
 (currently in development). The oldest available ECoF release is
-*2024.04*. The archive is automatically updated every month between the
+*2024.03*. The archive is automatically updated every month between the
 1<sup>st</sup> and the 10<sup>th</sup> with the new release.
 
 ### References
