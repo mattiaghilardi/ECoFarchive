@@ -3,7 +3,7 @@ name: download-ECoF
 # Run at 00:00 UTC from the 5th to the 10th of each month
 on:
   schedule:
-    - cron:  '0 0 5-10 * *'
+    - cron:  '15 7 5-10 * *'
 
 jobs:
   download-ECoF:
@@ -30,4 +30,4 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add archive/*
           git commit -m 'Update archive' || echo "No changes to commit"
-          git push origin main || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
