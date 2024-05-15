@@ -1,9 +1,9 @@
 name: download-ECoF
 
-# Run at 00:00 UTC from the 5th to the 10th of each month
+# Run at 00:00 UTC every day
 on:
   schedule:
-    - cron:  '0 0 1-10 * *'
+    - cron:  '0 0 * * *'
 
 jobs:
   download-ECoF:
