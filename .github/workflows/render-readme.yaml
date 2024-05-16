@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'archive/**'
+      - 'README.Rmd'
 
 name: render-readme
 

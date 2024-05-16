@@ -32,7 +32,7 @@ download_date <- format(as.Date(Sys.Date(), format = "%Y-%m-%d"), "%d %B %Y")
 `r badge_custom("latest release", latest_release, "blue", url = url)`
 <!-- badges: end -->
 
-This repository serves as the archive of the [Eschmeyer's Catalog of Fishes](https://research.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (ECoF) (Fricke et al. 2024, Van der Laan et al. 2024), accessed through the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package (currently in development). The oldest available ECoF release is *`r oldest_release`*. The archive is automatically updated every month between the 1^st^ and the 10^th^ with the new release.
+This repository serves as the archive of the [Eschmeyer's Catalog of Fishes](https://research.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (ECoF) (Fricke et al. 2024, Van der Laan et al. 2024), accessed through the [`fishrfun`](https://github.com/mattiaghilardi/fishrfun) R package (currently in development). The oldest available ECoF release is *`r oldest_release`*. The archive is automatically updated every month with the new release.
 
 ### References
 
