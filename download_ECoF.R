@@ -22,6 +22,7 @@ get_current_ECoF_version <- function() {
     strsplit(" ")
   #day <- date[[1]][1]
   month <- match(date[[1]][2], month.name)
+  if (is.na(month)) month <- match(date[[1]][2], month.abb)
   month <- ifelse(month < 10, paste0(0, month), as.character(month))
   year <- date[[1]][3]
   paste(year, month, sep = ".")
