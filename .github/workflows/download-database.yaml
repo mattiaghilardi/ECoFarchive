@@ -8,13 +8,12 @@ on:
 jobs:
   download-ECoF:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.PAT }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
@@ -34,4 +33,9 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add archive/*
           git commit -m 'Update archive' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
