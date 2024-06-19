@@ -9,7 +9,7 @@
 status](https://github.com/mattiaghilardi/ECoFarchive/workflows/download-ECoF/badge.svg)](https://github.com/mattiaghilardi/ECoFarchive/actions)
 [![License:
 MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://cran.r-project.org/web/licenses/MIT)
-[![](https://img.shields.io/badge/latest%20release-2024.05-blue.svg)](https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_2024.05.rds)
+[![](https://img.shields.io/badge/latest%20release-2024.06-blue.svg)](https://github.com/mattiaghilardi/ECoFarchive/blob/main/archive/ECoF_2024.06.rds)
 <!-- badges: end -->
 
 This repository serves as the archive of the [Eschmeyer’s Catalog of
