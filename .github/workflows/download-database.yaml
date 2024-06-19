@@ -3,7 +3,7 @@ name: download-ECoF
 # Run at 00:00 UTC every day
 on:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  '9 20 * * *'
 
 jobs:
   download-ECoF:
@@ -37,5 +37,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT }}
           branch: ${{ github.ref }}
