@@ -3,7 +3,7 @@ name: download-ECoF
 # Run at 00:00 UTC every day
 on:
   schedule:
-    - cron:  '50 9 * * *'
+    - cron:  '0 0 * * *'
 
 jobs:
   download-ECoF:
