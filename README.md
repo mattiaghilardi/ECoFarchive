@@ -25,9 +25,9 @@ release.
 Fricke, R., Eschmeyer, W. N. & Van der Laan, R. (eds) 2024. ESCHMEYER’S
 CATALOG OF FISHES: GENERA, SPECIES, REFERENCES.
 (<http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>).
-Electronic version accessed 16 May 2024.
+Electronic version accessed 19 June 2024.
 
 Van der Laan, R., Fricke, R. & Eschmeyer, W. N. (eds) 2024. ESCHMEYER’S
 CATALOG OF FISHES: CLASSIFICATION.
 (<http://www.calacademy.org/scientists/catalog-of-fishes-classification/>).
-Electronic version accessed 16 May 2024.
+Electronic version accessed 19 June 2024.
