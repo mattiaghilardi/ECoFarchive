@@ -20,8 +20,17 @@ get_current_ECoF_version <- function() {
   date <- text[2] %>%
     stringr::str_extract("[0-90-9]+ [A-Za-z]+ [0-90-9]+") %>%
     strsplit(" ")
+  # Alternative date format if date is NA (e.g. 01 Aug. 2026)
+  if (is.na(date)) {
+    date <- text[2] %>%
+      stringr::str_extract("[0-90-9]+ [A-Za-z.]+ [0-90-9]+") %>%
+      strsplit(" ")
+    date[[1]][2] <- gsub("\\.", "", date[[1]][2])
+  }
+  # Abort if a date cannot be retrieved
+  if (is.na(date)) cli::cli_abort("Cannot retrieve current ECoF version")
   #day <- date[[1]][1]
-  month <- match(date[[1]][2], month.name)
+  month <- pmatch(date[[1]][2], month.name)
   if (is.na(month)) month <- match(date[[1]][2], month.abb)
   month <- ifelse(month < 10, paste0(0, month), as.character(month))
   year <- date[[1]][3]
